@@ -34,9 +34,15 @@ jobs:
         working-directory: ./nodejs-app-nov-2025
 
       - name: Echo username and password
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}   
         run: |
-          echo "Username: ${{ secrets.USERNAME }}"
-          echo "Password: ${{ secrets.PASSWORD }}" 
+          echo "Username length: ${#USERNAME}"
+          echo "Password length: ${#PASSWORD}"
+          echo "Username is set: $([[ -n "$USERNAME" ]] && echo 'YES' || echo 'NO')"
+          echo "Password is set: $([[ -n "$PASSWORD" ]] && echo 'YES' || echo 'NO')"
+       
 
       - name: Upload artifacts check the node js application path 
         uses: actions/upload-artifact@v4
