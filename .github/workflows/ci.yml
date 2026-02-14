@@ -34,7 +34,7 @@ jobs:
 
       - name: Echo username and password
         env:
-          USERNAME: ${{ vars.USERNAME }}
+          USERNAME: ${{ vars.USER }}
           PASSWORD: ${{ secrets.PASSWORD }}   
         run: |
           echo "Username: $USERNAME"
