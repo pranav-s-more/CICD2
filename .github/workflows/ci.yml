@@ -11,7 +11,6 @@ on:
 jobs: 
   build:
     runs-on: ubuntu-latest
-    environment: new env
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -35,7 +34,7 @@ jobs:
 
       - name: Echo username and password
         env:
-          USERNAME: ${{ secrets.USERNAME }}
+          USERNAME: ${{ secrets.USER }}
           PASSWORD: ${{ secrets.PASSWORD }}   
         run: |
           echo "Username length: ${#USERNAME}"
