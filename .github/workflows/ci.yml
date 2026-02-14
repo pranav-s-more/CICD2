@@ -34,12 +34,10 @@ jobs:
 
       - name: Echo username and password
         env:
-          USERNAME: ${{ secrets.USER }}
+          USERNAME: ${{ vars.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}   
         run: |
-          echo "Username length: ${#USERNAME}"
-          echo "Password length: ${#PASSWORD}"
-          echo "Username is set: $([[ -n "$USERNAME" ]] && echo 'YES' || echo 'NO')"
+          echo "Username: $USERNAME"
           echo "Password is set: $([[ -n "$PASSWORD" ]] && echo 'YES' || echo 'NO')"
        
 
