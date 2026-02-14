@@ -22,15 +22,18 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./nodejs-app-nov-2025
 
       - name: Run tests
         run: npm test
+        working-directory: ./nodejs-app-nov-2025
 
       - name: list all the files and folder in build directory
-        run: ls 
+        run: ls
+        working-directory: ./nodejs-app-nov-2025 
 
       - name: Upload artifacts check the node js application path 
         uses: actions/upload-artifact@v4
         with:
-          name: nodejs-app-=artifacts
-          path: ./
+          name: nodejs-app-artifacts
+          path: ./nodejs-app-nov-2025
