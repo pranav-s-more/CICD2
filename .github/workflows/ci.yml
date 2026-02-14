@@ -11,6 +11,7 @@ on:
 jobs: 
   build:
     runs-on: ubuntu-latest
+    environment: DEV
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -35,7 +36,7 @@ jobs:
       - name: Echo username and password
         env:
           USERNAME: ${{ vars.USER }}
-          PASSWORD: ${{ secrets.PASSWORD }}   
+          PASSWORD: ${{ secrets.password }}   
         run: |
           echo "Username: $USERNAME"
           echo "Password is set: $([[ -n "$PASSWORD" ]] && echo 'YES' || echo 'NO')"
