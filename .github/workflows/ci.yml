@@ -1,4 +1,4 @@
-name: Build the CI job for nodejs application
+name: Build the CI job for nodejs application.
 on:
   push:
     branches:
