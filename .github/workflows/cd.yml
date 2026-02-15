@@ -1,7 +1,7 @@
 name: Deploying the nodejs application to ec2 instance as runner in aws ap-south-1
 on:
   workflow_run:
-    workflows: ["Build the CI job for nodejs application"]
+    workflows: ["Build the CI job for nodejs application."]
     types:
       - completed
 
